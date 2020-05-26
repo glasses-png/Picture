@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=50)
@@ -44,6 +45,7 @@ class Image(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category)
     location = models.ForeignKey(Location)
+  
 
     @classmethod
     def filter_by_location(cls, location):
